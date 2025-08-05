@@ -4,10 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="/style.css">
 </head>
 <body>
     <p>Use the search functionality to explore more. <%= userr.name %> </p>
     <p>Username: <%= userr.followers %></p>
     <img src="<%= userr.posts[0].image %>" alt="Profile Image" style="width: 100px; height: 100px;">
+    <button class="btn">followers</button>
+    <button class="btn">Likes</button>
 </body>
+<script src="/js.js"></script>
 </html>
