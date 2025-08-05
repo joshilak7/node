@@ -11,10 +11,10 @@ app.listen(port, () => {
     console.log(`here is servere ${port}`);
 });
 
-app.get("/home", (req, res) => {
+app.get("/ig/:username", (req, res) => {
     const deta = require("./data.json");
-    let { name } = req.params;
-    const user = deta[name]
+    let { username } = req.params;
+    const user = deta[username]
     console.log(user);
     res.render("in.ejs", { user });
 });
