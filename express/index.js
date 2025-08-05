@@ -14,9 +14,9 @@ app.listen(port, () => {
 app.get("/ig/:username", (req, res) => {
     const deta = require("./data.json");
     let { username } = req.params;
-    const user = deta[username]
-    console.log(user);
-    res.render("in.ejs", { user });
+    let userr = deta[username];
+    console.log(userr);
+    res.render("in.ejs", { userr });
 });
 
 // app.get("/" , (req, res) => {
