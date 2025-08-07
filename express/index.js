@@ -1,7 +1,8 @@
 const express = require ("express");
 const app = express();
 const port = 3000;
-
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
 //<%- include(includes/header.ejs) %>
 
 // app.set("view engine", "ejs");
@@ -62,6 +63,11 @@ app.listen(port, () => {
 
 // node package manager
 
-app.get("/regis" , (req, res) => {
+app.get("/register" , (req, res) => {
     res.send("hello world");
+});
+
+app.post("/register", (req, res) => {
+    console.log(req.body);
+    res.send("hello world post");
 });
