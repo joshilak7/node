@@ -4,7 +4,7 @@ const port = 3000;
 
 //<%- include(includes/header.ejs) %>
 
-app.set("view engine", "ejs");
+// app.set("view engine", "ejs");
 // app.get("/", (req , res) => {
 //     res.render("home.ejs");
 // });
@@ -13,13 +13,13 @@ app.listen(port, () => {
     console.log(`here is servere ${port}`);
 });
 
-app.get("/ig/:username", (req, res) => {
-    const deta = require("./data.json");
-    let { username } = req.params;
-    let userr = deta[username];
-    console.log(userr);
-    res.render("in.ejs", { userr });
-});
+// app.get("/ig/:username", (req, res) => {
+//     const deta = require("./data.json");
+//     let { username } = req.params;
+//     let userr = deta[username];
+//     console.log(userr);
+//     res.render("in.ejs", { userr });
+// });
 
 // app.get("/" , (req, res) => {
 //     let rendom = Math.floor(Math.random() * 100) + 1;
@@ -61,3 +61,7 @@ app.get("/ig/:username", (req, res) => {
 // });
 
 // node package manager
+
+app.get("/regis" , (req, res) => {
+    res.send("hello world");
+});
