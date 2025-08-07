@@ -64,6 +64,7 @@ app.listen(port, () => {
 // node package manager
 
 app.get("/register" , (req, res) => {
+    console.log(req.query);
     res.send("hello world");
 });
 
