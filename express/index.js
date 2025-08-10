@@ -1,11 +1,12 @@
 const express = require ("express");
 const app = express();
 const port = 3000;
-app.use(express.urlencoded({ extended: true }));
-app.use(express.json());
+// app.use(express.urlencoded({ extended: true }));
+// app.use(express.json());
 //<%- include(includes/header.ejs) %>
 
-// app.set("view engine", "ejs");
+app.use(express.static("public"));
+app.set("view engine", "ejs");
 // app.get("/", (req , res) => {
 //     res.render("home.ejs");
 // });
@@ -14,13 +15,13 @@ app.listen(port, () => {
     console.log(`here is servere ${port}`);
 });
 
-// app.get("/ig/:username", (req, res) => {
-//     const deta = require("./data.json");
-//     let { username } = req.params;
-//     let userr = deta[username];
-//     console.log(userr);
-//     res.render("in.ejs", { userr });
-// });
+app.get("/ig/:username", (req, res) => {
+    const deta = require("./data.json");
+    let { username } = req.params;
+    let userr = deta[username];
+    console.log(userr);
+    res.render("in.ejs", { userr });
+});
 
 // app.get("/" , (req, res) => {
 //     let rendom = Math.floor(Math.random() * 100) + 1;
@@ -63,12 +64,12 @@ app.listen(port, () => {
 
 // node package manager
 
-app.get("/register" , (req, res) => {
-    console.log(req.query);
-    res.send("hello world");
-});
+// app.get("/register" , (req, res) => {
+//     console.log(req.query);
+//     res.send("hello world");
+// });
 
-app.post("/register", (req, res) => {
-    console.log(req.body);
-    res.send("hello world post");
-});
+// app.post("/register", (req, res) => {
+//     console.log(req.body);
+//     res.send("hello world post");
+// });
